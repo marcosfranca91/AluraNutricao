@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AluraNutricao"
-             x:Class="AluraNutricao.MainPage">
+             x:Class="AluraNutricao.CadastroRefeicao"
+             Title="Cadastro de refeição">
     <ContentPage.Content>
         
         <StackLayout Padding="25">
             
-            <Label Text="Cadastro de refeição" FontSize="24"/>
+            
             <Entry x:Name="entDescricao" Placeholder="Ex: File de Frango" FontSize="24"/>
 
             <StackLayout Orientation="Horizontal">
@@ -17,7 +18,9 @@
             
             <Slider x:Name="sldCalorias" Maximum="1000" Minimum="0" ValueChanged="AtualizaCalorias"/>
 
-            <Button Text="Cadastrar" Clicked="salvaRefeicao" FontSize="24"/>
+            <Button Text="Cadastrar" Clicked="SalvaRefeicao" FontSize="24"/>
+
+            <Button Text="Abrir Lista" Clicked="MostraLista" FontSize="24"/>
 
         </StackLayout>
             

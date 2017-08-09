@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace AluraNutricao
 {
-	public partial class MainPage : ContentPage
+	public partial class CadastroRefeicao : ContentPage
 	{
-		public MainPage()
+		public CadastroRefeicao()
 		{
 			InitializeComponent();
 		}
@@ -21,7 +21,7 @@ namespace AluraNutricao
             lblCalorias.Text = valor.ToString();
         }
 
-        public void salvaRefeicao(Object sender, EventArgs e)
+        public void SalvaRefeicao(Object sender, EventArgs e)
         {
             string descricao = entDescricao.Text;
             string calorias = sldCalorias.Value.ToString();
@@ -30,11 +30,16 @@ namespace AluraNutricao
             Clear();
         }
 
+        public void MostraLista(Object sender,EventArgs e)
+        {
+            ListaRefeicoes tela = new ListaRefeicoes();
+            Navigation.PushAsync(tela);
+        }
+
         public void Clear()
         {
             entDescricao.Text = "";
             sldCalorias.Value = 0;
-            
         }
         
     }
