@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AluraNutricao"
+             x:Class="AluraNutricao.CadastroRefeicao"
+             Title="Cadastro de refeição">
+
+    <StackLayout Padding="25" >
+
+        <Entry x:Name="entDescricao" Placeholder="Ex: File de Frango" FontSize="24"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Calorias" FontSize="24"/>
+            <Label x:Name="lblCalorias" Text="0" FontSize="22" />
+        </StackLayout>
+
+        <Slider x:Name="sldCalorias" Maximum="1000" Minimum="0" ValueChanged="atualizaContador"/>
+
+        <Button Text="Cadastrar" Clicked="SalvaRefeicao" />
+
+    </StackLayout>
+
+</ContentPage>
