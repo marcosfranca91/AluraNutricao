@@ -20,6 +20,7 @@
       <DependentUpon>ListaRefeicoes.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Refeicao.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)CadastroRefeicao.xaml">
