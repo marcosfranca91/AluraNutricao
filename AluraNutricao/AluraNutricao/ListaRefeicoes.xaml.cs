@@ -21,5 +21,18 @@ namespace AluraNutricao
             BindingContext = this;
 			InitializeComponent ();
 		}
+
+        public async void AcaoItem(object sender, ItemTappedEventArgs e)
+        {
+            Refeicao refeicao = e.Item as Refeicao;
+            
+            var resposta = await DisplayAlert("Remover Item", "Você tem certeza que deseja remover a refeição " + refeicao.Descricao, "Sim", "Não");
+
+            if (resposta)
+            {
+                Refeicoes.Remove(refeicao);
+                await DisplayAlert("Remover Item", "Refeição removida com sucesso", "Ok");
+            }
+        }
 	}
 }

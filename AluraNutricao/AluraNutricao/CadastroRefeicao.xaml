@@ -20,7 +20,7 @@
 
             <Button Text="Cadastrar" Clicked="SalvaRefeicao" FontSize="24"/>
 
-            <Button Text="Abrir Lista" Clicked="MostraLista" FontSize="24"/>
+            <!--<Button Text="Abrir Lista" Clicked="MostraLista" FontSize="24"/>-->
 
         </StackLayout>
             
