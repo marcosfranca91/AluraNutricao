@@ -13,7 +13,7 @@ namespace AluraNutricao
 		{
 			InitializeComponent();
 
-			MainPage = new AluraNutricao.MainPage();
+            MainPage = new HomeTabbedPage();
 		}
 
 		protected override void OnStart ()
