@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite.Net;
+using System.Runtime.CompilerServices;
+using AluraNutricao.Data;
 
+[assembly: Xamarin.Forms.Dependency(typeof(SQLite_ios))]
 namespace AluraNutricao.Data
 {
-    [assembly: Dependency(typeof(SQLite_ios))]
+    
     class SQLite_ios : ISqlite
     {
         

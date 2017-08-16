@@ -43,7 +43,7 @@ namespace AluraNutricao.Data
 
         public ObservableCollection<Refeicao> GetAll()
         {
-           return new ObservableCollection<Refeicao> (conexao.Table<Refeicao>)
+            return new ObservableCollection<Refeicao>(conexao.Table<Refeicao>());
         }
 
         
