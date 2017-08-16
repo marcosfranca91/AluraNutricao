@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AluraNutricao.Data;
+using SQLite.Net;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,12 +12,17 @@ namespace AluraNutricao
 {
 	public class HomeTabbedPage : TabbedPage
 	{
-        public ObservableCollection<Refeicao> refeicoes = new ObservableCollection<Refeicao>();
+        private SQLiteConnection con = DependencyService.Get<ISqlite>().GetConnection();
+        public RefeicaoDAO dao = new RefeicaoDAO(con);
+        public ObservableCollection<Refeicao> refeicoes = dao.GetAll();
 
-		public HomeTabbedPage ()
+        public HomeTabbedPage ()
 		{
-            this.Children.Add(new CadastroRefeicao(refeicoes));
-            this.Children.Add(new ListaRefeicoes(refeicoes));
+            CadastroRefeicao telaCadastro = new CadastroRefeicao(dao);
+            ListaRefeicoes telaLista = new ListaRefeicoes(dao);
+
+            this.Children.Add(telaCadastro);
+            this.Children.Add(telaLista);
 		}
 	}
 }

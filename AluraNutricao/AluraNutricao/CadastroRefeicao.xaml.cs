@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AluraNutricao.Data;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace AluraNutricao
 {
 	public partial class CadastroRefeicao : ContentPage
 	{
-        public ObservableCollection<Refeicao> Refeicoes { get; set; }
+        private RefeicaoDAO dao;
 
-        public CadastroRefeicao(ObservableCollection<Refeicao> refeicoes)
+        public CadastroRefeicao(RefeicaoDAO dao)
 		{
-            this.Refeicoes = refeicoes;
+            this.dao = dao;
 			InitializeComponent();
 		}
 
@@ -28,14 +29,15 @@ namespace AluraNutricao
         public void SalvaRefeicao(Object sender, EventArgs e)
         {
             string descricao = entDescricao.Text;
-            string calorias = sldCalorias.Value.ToString();
-            double valor = Convert.ToInt64(calorias);
-
+            //string calorias = sldCalorias.Value.ToString();
+            //double valor = Convert.ToInt64(calorias);
+            double valor = sldCalorias.Value;
+            
             Refeicao refeicao = new Refeicao(descricao, valor);
-            this.Refeicoes.Add(refeicao);
+            dao.Salvar(refeicao);
             
 
-            string msg = "A refeição " + descricao + " de " + calorias + " calorias foi salva com sucesso";
+            string msg = "A refeição " + descricao + " de " + valor + " calorias foi salva com sucesso";
             DisplayAlert("Cadastro de Calorias", msg, "OK" );
             Clear();
         }

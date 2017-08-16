@@ -15,6 +15,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)CadastroRefeicao.xaml.cs">
       <DependentUpon>CadastroRefeicao.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ISqlite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\RefeicaoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\SQLite_ios.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HomeTabbedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ListaRefeicoes.xaml.cs">
       <DependentUpon>ListaRefeicoes.xaml</DependentUpon>

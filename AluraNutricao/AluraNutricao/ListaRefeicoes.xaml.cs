@@ -11,7 +11,8 @@ using Xamarin.Forms.Xaml;
 namespace AluraNutricao
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ListaRefeicoes : ContentPage
+
+    public partial class ListaRefeicoes : ContentPage
 	{
         public ObservableCollection<Refeicao> Refeicoes { get; set; }
 
